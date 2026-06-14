@@ -75,13 +75,7 @@ function AppCanvas() {
 
   // Loading overlay
   const refLoading = useRef();
-
-  // Optional refs used by buttons
-  const refAdjustEnter = useRef();
-  const refAdjust = useRef();
-  const refChangeModel = useRef();
-
-
+  
   // ========================================
   // HELPER FUNCTIONS
   // ========================================
