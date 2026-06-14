@@ -1,0 +1,114 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    /* background-image: url('../../../public/background4.jpg'); */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.title {
+    flex-grow: 1;
+    text-align: center;
+    font-weight: bold !important;
+    font-size: 2rem !important;
+    color: white;
+    padding: 8px 0;
+}
+
+.container {
+    justify-content: center;
+    align-items: center;
+    height: calc(100vw - 24px);
+    width: calc(100vw - 24px);
+    min-width: 200px;
+    min-height: 200px;
+    max-height: 800px;
+    max-width: 800px;
+    border-radius: 100%;
+    overflow: hidden;
+    background-color: #ac9d9d;
+    box-shadow: 0px 0px 45px 0px #000000;
+}
+
+.loading {
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.textContainer {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    bottom: 10%;
+    justify-content: center;
+    align-items: center;
+}
+
+.adjustText {
+    background-color: #580606;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 10%;
+    max-width: 50%;
+    padding: 8px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    white-space: pre-wrap;
+    flex-wrap: wrap;
+    border: solid 2px rgb(111, 101, 101);
+    border-radius: 8px;
+}
+
+.glassesName {
+    background-color: #3ebae0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 20px;
+    width: 100%;
+    max-width: 50%;
+    padding: 2px;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+    white-space: pre-wrap;
+    flex-wrap: wrap;
+    border: solid 2px rgb(111, 101, 101);
+    border-radius: 8px;
+}
+
+.secondaryButton {
+    background-color: aliceblue !important;
+    color: black !important;
+}
+
+.carouselContainer {
+    padding: 28px;
+}
+
+.carouselImages {
+    border: solid 2px green;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.selectedImage {
+    border: solid 4px red;
+    border-radius: 15px;
+    cursor: pointer;
+}
