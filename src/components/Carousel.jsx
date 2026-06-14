@@ -15,28 +15,35 @@ export default function Carousel({ images, onClick, selected }) {
     arrows: true,
   };
 
-  const [selectedImg, setSelectedImg] = useState(0);
+  // Helper to resolve the correct image URL based on the dataset
+  const getImgSrc = (item) => {
+    if (item.image) {
+      const filename = item.image.endsWith('.jpg') ? item.image : `${item.image}.jpg`;
+      return `https://productimage.jeeliz.com/${filename}`;
+    }
+    return `https://productimage.jeeliz.com/US_${item.SKU}.jpg`;
+  };
 
-  useEffect(() => {
-    setSelectedImg(selected);
-  }, [selected]);
-
-  return (
+ return (
     <div className={styles.carouselContainer}>
       <Slider {...settings}>
         {images.map((image, index) => (
           <img
             key={image.SKU}
-            alt={image["label (US)"] || "Glasses"}
+            alt={image["label (US)"] || "Glasses model"}
             className={
-              selectedImg === index
-                ? styles.selectedImage
-                : styles.carouselImages
+              selected === index ? styles.selectedImage : styles.carouselImages
             }
-            src={`https://productimage.jeeliz.com/US_${image.SKU}.jpg`}
-            onClick={() => {
-              setSelectedImg(index);
-              onClick(index);
+            src={getImgSrc(image)}
+            onClick={() => onClick(index)}
+            // Accessibility enhancements:
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                onClick(index);
+              }
             }}
           />
         ))}
