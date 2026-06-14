@@ -1,70 +1,133 @@
-# Getting Started with Create React App
+# 3D Virtual Eyewear Try-On
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based web application that allows users to virtually try on different pairs of glasses using their webcam and the Jeeliz Virtual Try-On Widget.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+*  Virtual try-on experience using webcam face tracking
+*  Browse through a large collection of eyewear models
+*  Change background scenes
+*  Adjust glasses position manually
+*  Responsive design
+*  Interactive image carousel for model selection
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* React
+* Material UI (MUI)
+* React Slick Carousel
+* Jeeliz Virtual Try-On Widget
+* CSS Modules
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+Clone the repository:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+git clone <repository-url>
+cd <project-folder>
+```
 
-### `npm run build`
+Install dependencies:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Start the development server:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm start
+```
 
-### `npm run eject`
+The application will be available at:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```txt
+http://localhost:3000
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Required Dependencies
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm install @mui/material
+npm install @emotion/react @emotion/styled
+npm install react-slick slick-carousel
+npm install jeelizvtowidget
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Project Structure
 
-## Learn More
+```txt
+src/
+├── components/
+│   ├── AppCanvas.jsx
+│   ├── Carousel.jsx
+│   ├── Spacer.jsx
+│   └── css/
+│       └── styles.module.css
+│
+├── backgrounds/
+│   ├── background.jpg
+│   ├── background2.jpg
+│   ├── background3.jpg
+│   └── background4.jpg
+│
+├── App.jsx
+├── glasses.js
+├── index.js
+└── index.css
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## How It Works
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. The application initializes the Jeeliz Virtual Try-On Widget.
+2. The user's webcam feed is displayed.
+3. Users can browse glasses models using the carousel.
+4. Selecting a model loads it onto the user's face in real time.
+5. Users can enter adjustment mode to fine-tune the glasses position.
+6. Backgrounds can be changed dynamically.
 
-### Code Splitting
+## Controls
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Eyewear Navigation
 
-### Analyzing the Bundle Size
+* **Start**: Load the first eyewear model.
+* **Previous**: Load the previous model.
+* **Next**: Load the next model.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Adjustment Mode
 
-### Making a Progressive Web App
+* **Adjust**: Enter manual positioning mode.
+* **Quit**: Exit adjustment mode.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Backgrounds
 
-### Advanced Configuration
+* **Change Background**: Cycle through available backgrounds.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Browser Permissions
 
-### Deployment
+The application requires access to the user's webcam.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+When prompted by your browser:
 
-### `npm run build` fails to minify
+* Allow camera access.
+* Ensure your device has a functioning webcam.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Known Limitations
+
+* Requires webcam access.
+* Performance depends on device hardware and browser capabilities.
+* Some eyewear models may take a moment to load depending on network speed.
+
+## Future Improvements
+
+* Search and filter eyewear models.
+* Favorites system.
+* Screenshot capture functionality.
+* Mobile-specific optimizations.
+* Additional background themes.
+* Product information panel.
+
+## License
+
+This project is intended for educational and demonstration purposes.
