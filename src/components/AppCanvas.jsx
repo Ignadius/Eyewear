@@ -154,15 +154,12 @@ function AppCanvas() {
           VIRTUAL TRY-ON AREA
       ======================================== */}
 
-      <div
-        ref={refPlaceHolder}
-        className={styles.container}
-      >
-        {/* Loading Overlay */}
-        <div
-          ref={refLoading}
-          className={styles.loading}
-        >
+      
+      <div ref={refPlaceHolder} className={styles.container}>
+        {/* THE FIX: Added the missing canvas element */}
+        <canvas ref={refCanvas} className={styles.vtoCanvas} style={{ width: '100%', height: '100%' }} />
+
+        <div ref={refLoading} className={styles.loading}>
           LOADING...
         </div>
 
