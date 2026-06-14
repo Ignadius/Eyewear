@@ -9,32 +9,47 @@ import background3 from "./components/backgrounds/background3.jpg";
 import background4 from "./components/backgrounds/background4.jpg";
 
 export default function Demo() {
-  const backgrounds = [background1, background2, background3, background4];
+   // Store all available backgrounds
+  const backgrounds = [
+    background1,
+    background2,
+    background3,
+    background4,
+  ];
+
+  // Track which background is currently selected
   const [selected, setSelected] = useState(0);
 
+  // Cycle through backgrounds when button is clicked
   const handleBackground = () => {
     setSelected((prev) => (prev + 1) % backgrounds.length);
-  }; //This automatically loops through all backgrounds.
+  };
 
   return (
     <Box
       className={styles.root}
-      style={{ backgroundImage: `url(${backgrounds[selected]})` }}
+
+      // Dynamically update background image
+      style={{
+        backgroundImage: `url(${backgrounds[selected]})`,
+      }}
     >
+
+      {/* Change background button */}
       <Button
         variant="contained"
-        style={{ position: "absolute", top: 20, right: 20, zIndex: 1 }}
         onClick={handleBackground}
       >
         Change background
       </Button>
-      <div style={{ flex: 1 }} />
+
+      {/* Page title */}
       <Typography className={styles.title}>
         Try on your favourite sunglasses
       </Typography>
-      <div style={{ flex: 1 }} />
+
+      {/* Virtual Try-On component */}
       <AppCanvas />
-      <div style={{ flex: 1 }} />
     </Box>
   );
 }
